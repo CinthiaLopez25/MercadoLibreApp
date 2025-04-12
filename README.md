@@ -2,4 +2,4 @@
 Un trabajo de universidad para simular la aplicación de Mercado Libre
 
 
-Cambios producidos por Alan
+Cambios producidos por Fidel
