@@ -76,7 +76,7 @@ En este apartado podrás correr diferentes comandos que necesites, los servicios
 - web: Podrás hacer cosas de nginx (en dado caso que necesites).
 - postgres: Consultas a base de datos (también puedes usar pgadmin con las credenciales del archivo **docker-compose.yml**)
 - app: En este servicio puedes correr cualquier comando de PHP como `php artisan migrate`.
-- node: Puedes correr comandos de node (en este servicio por defecto ya se está corriendo npm run dev para renderizar los cambios en el frontend).
+- node: Puedes correr comandos de node (en este servicio por defecto ya se está corriendo `npm run dev` para renderizar los cambios en el frontend).
 
 > Cualquier cambio que hagas en los archivos se verá reflejado automáticamente en los contenedores de Docker, por lo que pueden trabajar sin problemas desde ahí y luego correr comandos en los contenedores para migraciones, creaciones de rutas, etc.
 
