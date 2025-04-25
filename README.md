@@ -66,11 +66,9 @@ En el apartado de Files será donde puedas verificar cualquier archivo que desee
 
 ![alt text](./docker/assets/files-docker.png)
 
-
 <br>
 
 ---
-
 
 <br>
 
