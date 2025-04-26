@@ -23,7 +23,13 @@ COPY . .
 RUN composer install
 
 COPY ./docker/entrypoint.sh /usr/local/bin/entrypoint.sh
+
 RUN chmod +x /usr/local/bin/entrypoint.sh
+RUN chown -R $USER:$USER storage bootstrap/cache &&\
+    chmod -R 775 storage bootstrap/cache &&\
+    touch storage/logs/laravel.log &&\
+    chmod 664 storage/logs/laravel.log
+
 ENTRYPOINT ["entrypoint.sh"]
 
 CMD ["php-fpm"]
