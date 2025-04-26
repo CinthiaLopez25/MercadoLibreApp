@@ -2,7 +2,7 @@
 Un trabajo de universidad para simular la aplicación de Mercado Libre
 
 
-## Instrucciones para Correr el proyeto con Docker
+## Instrucciones para Correr el proyecto con Docker
 Se agregó un archivo docker-compose.yml, este contiene la configuración para que Docker incie los contenedores necesarios para trabajar de manera fácil en cualquier computadora.
 
 > Solamente necesitas tener instalado Docker y tenerlo corriendo en tu computadora para que funcione.
@@ -42,7 +42,7 @@ Si entras al contenedor podrás ver los diferentes servicios corriendo
 
 <br>
 
-De esta manera se verá si entras a cualquiera de los dos servicios.
+De esta manera se verá si entras a cualquiera de los servicios.
 
 ![Dentro de un Servicio](./docker/assets/servicio-docker.png)
 
@@ -74,9 +74,9 @@ En el apartado de Files será donde puedas verificar cualquier archivo que desee
 
 En este apartado podrás correr diferentes comandos que necesites, los servicios corriendo son los siguientes:
 - web: Podrás hacer cosas de nginx (en dado caso que necesites).
-- postgres: Consultas a base de datos (también puedes usar postgres con las credenciales del archivo **docker-compose.yml**)
+- postgres: Consultas a base de datos (también puedes usar pgadmin con las credenciales del archivo **docker-compose.yml**)
 - app: En este servicio puedes correr cualquier comando de PHP como `php artisan migrate`.
-- node: Puedes correr comandos de node (en este servicio por defecto ya se está corriendo npm run dev para renderizar los cambios en el frontend).
+- node: Puedes correr comandos de node (en este servicio por defecto ya se está corriendo `npm run dev` para renderizar los cambios en el frontend).
 
 > Cualquier cambio que hagas en los archivos se verá reflejado automáticamente en los contenedores de Docker, por lo que pueden trabajar sin problemas desde ahí y luego correr comandos en los contenedores para migraciones, creaciones de rutas, etc.
 
