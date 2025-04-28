@@ -9,6 +9,7 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
+        <link rel="icon" type="image/x-icon" href="{{ Vite::image('favicon/favicon.svg') }}">
 
         <!-- Styles / Scripts -->
         @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
@@ -19,12 +20,7 @@
             </style>
         @endif
     </head>
-    <body class="bg-[#FDFDFC] dark:bg-[#ad9c9c] text-[#1b1b18] flex items-center lg:justify-center min-h-screen flex-col">
-        <x-header></x-header>
-        <div class="flex items-center justify-center w-full transition-opacity opacity-100 duration-750 lg:grow starting:opacity-0">
-            <main class="flex max-w-[335px] w-full flex-col-reverse lg:max-w-4xl lg:flex-row">
-               
-            </main>        
-            </div>          
+    <body class="bg-[#FDFDFC] dark:bg-[#ad9c9c] text-[#1b1b18] min-h-screen flex-col">
+        {{ $slot}}         
     </body>
 </html>
