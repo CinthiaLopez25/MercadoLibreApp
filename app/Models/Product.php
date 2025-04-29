@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Product extends Model
@@ -14,16 +14,18 @@ class Product extends Model
     public $timestamps = true;
 
     protected $fillable = [
+        'id_category',
         'name',
         'description',
         'price',
         'stock',
         'created_at',
-        'updated_at'
+        'updated_at',
+        'deleted_at'
     ];
 
-    // public function category()
-    // {
-    //     return $this->belongsTo(Category::class, 'category_id');
-    // }
+    public function category()
+    {
+        return $this->belongsTo(Category::class, 'id_category');
+    }
 }
