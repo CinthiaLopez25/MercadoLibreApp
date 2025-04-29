@@ -2,11 +2,7 @@
     <div>
         <x-header></x-header>
         <div class="flex items-center justify-center w-full transition-opacity opacity-100 duration-750 lg:grow starting:opacity-0">
-            <main class="flex max-w-[335px] w-full flex-col-reverse lg:max-w-4xl lg:flex-row">
-                <div style="text-align: left;">
-                <h2 style="font-size: 48px; font-weight: bold;">Ofertas</h2>
-                </div>
-
+            <main class="flex w-full flex-col-reverse">
                 <section class= "p-4 bg-red mb-6" style="background-color:rgb(243, 239, 239);">
                 <!-- Título de sección -->
                 <div class="flex justify-between items-center mb-4">
@@ -15,7 +11,7 @@
 
                 <!-- Contenedor de productos -->
                 <div class="flex flex-wrap gap-8 justify-center">
-                    
+
                     <!-- Producto 1 -->
                     <div class="w-48">
                     <div class="justify-center; margin: 5px;">
@@ -64,7 +60,7 @@
                     </button>
                     </div>
                     </div>
-                    
+
                     <!-- Producto 4 -->
                 <div class="w-48">
                 <div class="justify-center; margin: 5px;">
@@ -127,7 +123,7 @@
 
                 <!-- Contenedor de productos -->
                 <div class="flex flex-wrap gap-8 justify-center">
-                    
+
                     <!-- Producto 1 -->
                     <div class="w-48">
                     <div class="justify-center; margin: 5px;">
@@ -177,7 +173,7 @@
                     </button>
                     </div>
                     </div>
-                    
+
                     <!-- Producto 4 -->
                 <div class="w-48">
                 <div class="justify-center; margin: 5px;">
