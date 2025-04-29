@@ -14,8 +14,17 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+            textColor: {
+                "transparent-black-100": 'rgba(0, 0, 0, 0.55)',
+                "transparent-black-200": 'rgba(0, 0, 0, 0.898)'
+            },
         },
+        clipPath: {
+          triangle: "polygon(50% 0%, 0% 100%, 100% 100%);",
+        }
     },
 
-    plugins: [forms],
+    plugins: [forms,
+      require('tailwind-clip-path')
+    ],
 };
