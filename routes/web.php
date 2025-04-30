@@ -1,11 +1,11 @@
 <?php
 
+use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('products');
-});
+Route::get('/', [ProductsController::class, 'show'])->name('home');
+// Route::get('/products/{product}', [ProductsController::class, 'show'])->name('products.show');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
