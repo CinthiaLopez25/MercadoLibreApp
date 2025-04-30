@@ -16,8 +16,17 @@ export default {
             },
             textColor: {
                 "transparent-black-100": 'rgba(0, 0, 0, 0.55)',
-                "transparent-black-200": 'rgba(0, 0, 0, 0.898)'
+                "transparent-black-200": 'rgba(0, 0, 0, 0.898)',
+                "transparent-black-300": 'rgba(0, 0, 0, 0.9)',
             },
+            aspectRatio: {
+                'card': '9 / 16',
+                'card-image': '15 / 16',
+            },
+            backgroundColor: {
+              "primary": 'rgb(243, 239, 239)',
+              "box": 'rgb(255, 255, 255)',
+            }
         },
         clipPath: {
           triangle: "polygon(50% 0%, 0% 100%, 100% 100%);",
