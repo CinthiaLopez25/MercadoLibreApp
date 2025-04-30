@@ -35,6 +35,7 @@ class ProductFactory extends Factory
           'price' => fake()->randomFloat(2, 1, 100),
           'stock' => fake()->numberBetween(1, 100),
           'image_url' =>  $faker->imageUrl(640, 480),
+          'free_shipping' => fake()->boolean(),
           'created_at' => now(),
           'updated_at' => now(),
       ];
