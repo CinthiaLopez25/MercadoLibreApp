@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Category;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,7 +17,14 @@ class ProductFactory extends Factory
      */
     public function definition(): array
     {
+        $amount_categories = Category::count();
+        if ($amount_categories == 0) {
+            Category::factory()->count(10)->create();
+        }
+        $id = fake()->numberBetween(1, $amount_categories);
+        $category_id = Category::where('id', '=', $id)->first()->id;
         return [
+            'id_category' => $category_id,
             'name' => 'Product ' . fake()->unique()->word,
             'description' => fake()->sentence(10),
             'price' => fake()->randomFloat(2, 1, 100),
