@@ -21,6 +21,7 @@ class ProductsController extends Controller
           })
           ->get();
         $products = DB::table('products')
+          ->select(['products.id', 'products.image_url','products.name', 'products.price', 'products.free_shipping', 'products.id_category', 'categories.name as category_name'])
           ->join('categories', 'categories.id', '=', 'products.id_category')
           ->get();
 
