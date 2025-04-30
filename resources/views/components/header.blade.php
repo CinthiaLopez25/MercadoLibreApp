@@ -50,13 +50,13 @@
   <div class="flex items-center gap-4 text-nowrap">
     @if(auth()->check())
       <a href="#">Mi cuenta</a>
-      <a href="#">Mi cuenta</a>
       <a href="#">Mis compras</a>
+      <a href="#">Favoritos</a>
       <img src="{{ Vite::image('notification.png') }}"/>
       <img src="{{ Vite::image('shopping-cart.png') }}"/>
     @else
-      <a href="#">Crear tu cuenta</a>
-      <a href="#">Ingresa</a>
+      <a href="{{ route('register') }}">Crear tu cuenta</a>
+      <a href="{{ route('login') }}">Ingresa</a>
       <a href="#">Mis compras</a>
       <img class="w-6 h-5" src="{{ Vite::image('shopping-cart.png') }}"/>
     @endif
