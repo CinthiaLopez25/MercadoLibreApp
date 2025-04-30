@@ -21,6 +21,6 @@ class product-box extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.productBox');
+        return view('components.product-box');
     }
 }
