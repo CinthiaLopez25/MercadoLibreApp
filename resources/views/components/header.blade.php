@@ -4,7 +4,7 @@
         <img src={{ Vite::image('logo_large.webp') }} alt="Mercado Libre">
 
         <!-- Formulario de búsqueda -->
-        <form class="flex w-full max-w-md" action="#" method="GET">
+        <form class="flex w-full max-w-md" id="searchForm" onsubmit="searchProducts(event)">
             <input
                 type="text"
                 name="search"
@@ -175,5 +175,14 @@
             }
         }
         return "";
+    }
+
+    function searchProducts(event) {
+      event.preventDefault();
+
+      const nameProduct = event.target[0].value.trim();
+      if (nameProduct) {
+        window.location.href = `/${encodeURIComponent(nameProduct)}`;
+      }
     }
 </script>

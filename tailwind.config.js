@@ -24,7 +24,7 @@ export default {
                 'card-image': '15 / 16',
             },
             backgroundColor: {
-              "primary": 'rgb(243, 239, 239)',
+              "primary": '#ededed',
               "box": 'rgb(255, 255, 255)',
             }
         },

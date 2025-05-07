@@ -30,4 +30,13 @@ class ProductsController extends Controller
             'products' => $products,
         ]);
     }
+    public function showProduct($name)
+    {
+      $name = '%'.$name.'%';
+      $products = DB::table('products')->where('name','ILIKE', $name)
+        ->get();
+      return view('search', [
+          'products' => $products,
+      ]);
+    }
 }
