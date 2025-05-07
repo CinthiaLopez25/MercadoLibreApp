@@ -20,7 +20,7 @@
             </style>
         @endif
     </head>
-    <body class="bg-primary  min-h-screen flex-col">
+    <body class="bg-primary min-h-screen flex-col">
         {{ $slot}}
     </body>
 </html>
