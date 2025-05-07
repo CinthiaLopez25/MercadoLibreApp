@@ -1,7 +1,9 @@
 <header class="w-full text-sm p-3 bg-yellow-300 not-has-[nav]:hidden">
     <div class=" ml-40 flex items-center gap-4">
         <!-- Imagen al lado del buscador -->
-        <img src={{ Vite::image('logo_large.webp') }} alt="Mercado Libre">
+        <a href="{{ route('home') }}">
+          <img src={{ Vite::image('logo_large.webp') }} alt="Mercado Libre">
+        </a>
 
         <!-- Formulario de búsqueda -->
         <form class="flex w-full max-w-md" id="searchForm" onsubmit="searchProducts(event)">
