@@ -20,7 +20,7 @@
             </style>
         @endif
     </head>
-    <body class="bg-primary dark:bg-[#ad9c9c] text-[#1b1b18] min-h-screen flex-col">
+    <body class="bg-primary  min-h-screen flex-col">
         {{ $slot}}
     </body>
 </html>
