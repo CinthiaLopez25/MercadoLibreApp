@@ -11,9 +11,7 @@
       <div class="flex flex-col gap-1">
         <h3 class="text-lg">Categorias</h3>
         @foreach ($categories as $category)
-          <a href="{{ route('productsBycategoy.show', ['product'=>$search,'category' => $category->id]) }}" class="text-gray-600 hover:text-gray-900">
-            {{ $category->name }}
-          </a>
+
         @endforeach
       </div>
     </sidebar>
