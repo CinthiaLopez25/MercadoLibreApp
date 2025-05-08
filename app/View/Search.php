@@ -6,14 +6,14 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class Header extends Component
+class Search extends Component
 {
-
     /**
      * Create a new component instance.
      */
-    public function __construct(public string $search = '')
+    public function __construct(public array $products, public array $categories)
     {
+
     }
 
     /**
@@ -21,6 +21,6 @@ class Header extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.header');
+        return view('components.product-box');
     }
 }

@@ -1,14 +1,17 @@
 <header class="w-full text-sm p-3 bg-yellow-300 not-has-[nav]:hidden">
     <div class=" ml-40 flex items-center gap-4">
         <!-- Imagen al lado del buscador -->
-        <img src={{ Vite::image('logo_large.webp') }} alt="Mercado Libre">
+        <a href="{{ route('home') }}">
+          <img src={{ Vite::image('logo_large.webp') }} alt="Mercado Libre">
+        </a>
 
         <!-- Formulario de búsqueda -->
-        <form class="flex w-full max-w-md" action="#" method="GET">
+        <form class="flex w-full max-w-md" id="searchForm" onsubmit="searchProducts(event)">
             <input
                 type="text"
                 name="search"
                 placeholder="Buscar productos, marcas y más..."
+                value="{{ $search }}"
                 class="w-full p-2 rounded-l-lg border border-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-500">
         </form>
     </div>
@@ -175,5 +178,14 @@
             }
         }
         return "";
+    }
+
+    function searchProducts(event) {
+      event.preventDefault();
+
+      const nameProduct = event.target[0].value.trim();
+      if (nameProduct) {
+        window.location.href = `/${encodeURIComponent(nameProduct)}`;
+      }
     }
 </script>
