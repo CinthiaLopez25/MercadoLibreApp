@@ -22,7 +22,21 @@ class ProductsController extends Controller
             'products' => $products,
         ]);
     }
-    public function showProducts($name)
+
+    public function showProduct($id)
+    {
+      $product = DB::table('products')
+        ->select(['products.id', 'products.image_url','products.name', 'products.price', 'products.free_shipping', 'stock', 'products.id_category', 'categories.name as category_name'])
+        ->join('categories', 'categories.id', '=', 'products.id_category')
+        ->where('products.id', '=', $id)
+        ->first();
+
+      return view('product', [
+          'product' => $product,
+      ]);
+    }
+
+    public function showProductsByName($name)
     {
       $nameQuery = '%'.$name.'%';
       $products = DB::table('products')->where('name','ILIKE', $nameQuery)
@@ -37,7 +51,7 @@ class ProductsController extends Controller
       ]);
     }
 
-    public function showProductsByCategory($name, $category)
+    public function showProductsByNameCategory($name, $category)
     {
       $nameQuery = '%'.$name.'%';
       $products = DB::table('products')
