@@ -1,7 +1,3 @@
-@php
-  $random = (bool) rand(0, 1);
-@endphp
-
 <section class= "w-3/5 p-4 mb-6 rounded-md bg-box">
 <!-- Título de sección -->
   <div class="flex justify-between items-center mb-4">

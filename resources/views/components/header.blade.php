@@ -9,6 +9,7 @@
                 type="text"
                 name="search"
                 placeholder="Buscar productos, marcas y más..."
+                value="{{ $search }}"
                 class="w-full p-2 rounded-l-lg border border-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-500">
         </form>
     </div>

@@ -13,7 +13,7 @@ class ProductCard extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct(public stdClass $product)
+    public function __construct(public stdClass $product, public bool $long = false)
     {}
 
     /**
