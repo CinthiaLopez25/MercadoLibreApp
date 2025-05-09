@@ -8,7 +8,7 @@
   }
 ?>
 
-<a class="{{ $class_a }}" href="#">
+<a class="{{ $class_a }}" href="/product/{{ $product->id }}">
   <img src={{ $product->image_url  }} class="aspect-card-image">
   <p class="{{ $class_p }}"> {{ $product->name  }} </p>
   <div class="flex items-baseline gap-2">

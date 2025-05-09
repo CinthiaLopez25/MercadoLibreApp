@@ -5,8 +5,9 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [ProductsController::class, 'show'])->name('home');
-Route::get('/{product}', [ProductsController::class, 'showProducts'])->name('products.show');
-Route::get('/{product}/{category}', [ProductsController::class, 'showProductsByCategory'])->name('productsBycategoy.show');
+Route::get('/product/{product}', [ProductsController::class, 'showProduct'])->name('products.show');
+Route::get('/products/{productName}', [ProductsController::class, 'showProductsByName'])->name('productsByName.show');
+Route::get('/products/{productName}/{category}', [ProductsController::class, 'showProductsByNameCategory'])->name('productsByNameCategoy.show');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

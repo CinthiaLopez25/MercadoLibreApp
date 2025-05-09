@@ -184,8 +184,9 @@
       event.preventDefault();
 
       const nameProduct = event.target[0].value.trim();
+      const url = `${window.location.origin}/products/${encodeURIComponent(nameProduct)}`;
       if (nameProduct) {
-        window.location.href = `/${encodeURIComponent(nameProduct)}`;
+        window.location.href = url;
       }
     }
 </script>

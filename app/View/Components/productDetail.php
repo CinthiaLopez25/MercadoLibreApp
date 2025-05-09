@@ -8,19 +8,21 @@ use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 use stdClass;
 
-class ProductCard extends Component
+class productDetail extends Component
 {
     /**
      * Create a new component instance.
      */
-    public function __construct(public Product|stdClass $product, public bool $long = false)
-    {}
+    public function __construct(public Product|stdClass $product)
+    {
+        //
+    }
 
     /**
      * Get the view / contents that represent the component.
      */
     public function render(): View|Closure|string
     {
-        return view('components.product-card');
+        return view('components.product-detail');
     }
 }
