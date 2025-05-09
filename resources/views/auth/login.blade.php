@@ -1,17 +1,17 @@
-      <!-- Franja amarilla superior -->
-    <div class="w-full h-20 bg-yellow-300"></div>
+     <!-- Franja amarilla superior con logo -->
+<div class="w-full h-20 bg-yellow-300 flex items-center justify-center">
+</div>
 
 <x-guest-layout>
-
-    <div class="max-w-md mx-auto mt-10 p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+    <div class="max-w-md mx-auto mt-10 p-6 bg-white border border-gray-200 rounded-xl shadow-md">
         <!-- Session Status -->
         <x-auth-session-status class="mb-4" :status="session('status')" />
 
         <!-- Título y mensaje de bienvenida -->
-        <h2 class="text-2xl font-semibold text-center text-gray-800 dark:text-gray-100 mb-6">
+        <h2 class="text-4xl font-semibold text-center text-gray-800 mb-6">
             {{ __('Bienvenido de nuevo') }}
         </h2>
-        <p class="text-sm text-center text-gray-500 dark:text-gray-400 mb-6">
+        <p class="text-sm text-center text-gray-600 mb-6">
             {{ __('Ingresa tu e-mail y contraseña para iniciar sesión') }}
         </p>
 
@@ -35,20 +35,20 @@
             <!-- Remember Me -->
             <div class="block mt-4">
                 <label for="remember_me" class="inline-flex items-center">
-                    <input id="remember_me" type="checkbox" class="rounded dark:bg-gray-900 border-gray-300 dark:border-gray-700 text-indigo-600 shadow-sm focus:ring-indigo-500 dark:focus:ring-indigo-600 dark:focus:ring-offset-gray-800" name="remember">
-                    <span class="ms-2 text-sm text-gray-600 dark:text-gray-400">{{ __('Remember me') }}</span>
+                    <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-yellow-500 shadow-sm focus:ring-yellow-500" name="remember">
+                    <span class="ms-2 text-sm text-gray-600">{{ __('Recordarme') }}</span>
                 </label>
             </div>
 
             <div class="flex items-center justify-end mt-4">
                 @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
+                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
+                        {{ __('¿Olvidaste tu contraseña?') }}
                     </a>
                 @endif
 
-                <x-primary-button class="ms-3 bg-blue-600 hover:bg-blue-700 text-white">
-                 {{ __('Log in') }}
+                <x-primary-button class="ms-3 bg-[#3483fa] hover:bg-blue-700 text-white px-6 py-2 rounded-md shadow-md">
+                    {{ __('Iniciar sesión') }}
                 </x-primary-button>
             </div>
         </form>
