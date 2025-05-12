@@ -1,10 +1,4 @@
 <!-- Franja amarilla superior -->
-<div class="w-full h-20 bg-yellow-300">
-  <a class="flex items-center h-full pl-4">
-    <img src={{ Vite::image('logo_large.webp') }} alt="Mercado Libre">
-  </a>
-</div>
-
 <x-guest-layout>
     <form method="POST" action="{{ route('register') }}">
         @csrf

@@ -1,10 +1,3 @@
-     <!-- Franja amarilla superior con logo -->
-<div class="w-full h-20 bg-yellow-300">
-  <a class="flex items-center h-full pl-4">
-    <img src={{ Vite::image('logo_large.webp') }} alt="Mercado Libre">
-  </a>
-</div>
-
 <x-guest-layout>
     <div class="max-w-md mx-auto mt-10 p-6 bg-white border border-gray-200 rounded-xl shadow-md">
         <!-- Session Status -->
