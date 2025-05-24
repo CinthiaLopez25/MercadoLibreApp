@@ -26,7 +26,7 @@ class ProductsController extends Controller
     public function showProduct($id)
     {
       $product = DB::table('products')
-        ->select(['products.id', 'products.image_url','products.name', 'products.price', 'products.free_shipping', 'stock', 'products.id_category', 'categories.name as category_name'])
+        ->select(['products.*', 'categories.name as category_name'])
         ->join('categories', 'categories.id', '=', 'products.id_category')
         ->where('products.id', '=', $id)
         ->first();
