@@ -33,3 +33,29 @@
     src: url('../assets/fonts/proximanova-semibold.woff2') format('woff2');
   }
 }
+
+@layer components {
+  .product-detail {
+    grid-template-areas: "side image image image detail detail detail price price price";
+    min-width: 800px;
+
+    :nth-child(1) {
+      grid-area: side;
+    }
+    :nth-child(2) {
+      grid-area: image;
+    }
+    :nth-child(3) {
+      grid-area: detail;
+    }
+    :nth-child(4) {
+      grid-area: price;
+    }
+
+    @apply grid grid-cols-10;
+  }
+
+  .product-button {
+    @apply w-full px-2 py-4 rounded-md font-bold;
+  }
+}
