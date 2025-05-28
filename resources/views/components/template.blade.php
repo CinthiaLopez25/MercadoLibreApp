@@ -3,12 +3,12 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        @if(Route::has('login') || Route::has('register'))
+          <meta name="csrf-token" content="{{ csrf_token() }}">
+        @endif
 
-        <title>Laravel</title>
+        <title>MercadoLibreApp</title>
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
         <link rel="icon" type="image/x-icon" href="{{ Vite::image('favicon/favicon.svg') }}">
 
         <!-- Styles / Scripts -->
@@ -20,7 +20,7 @@
             </style>
         @endif
     </head>
-    <body class="bg-primary dark:bg-[#ad9c9c] text-[#1b1b18] min-h-screen flex-col">
+    <body class="bg-primary min-h-screen flex-col">
         {{ $slot}}
     </body>
 </html>

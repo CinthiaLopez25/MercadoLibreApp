@@ -20,11 +20,11 @@ export default {
                 "transparent-black-300": 'rgba(0, 0, 0, 0.9)',
             },
             aspectRatio: {
-                'card': '9 / 16',
+                'card': '12 / 16',
                 'card-image': '15 / 16',
             },
             backgroundColor: {
-              "primary": 'rgb(243, 239, 239)',
+              "primary": '#ededed',
               "box": 'rgb(255, 255, 255)',
             }
         },

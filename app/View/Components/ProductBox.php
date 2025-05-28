@@ -5,16 +5,16 @@ namespace App\View\Components;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
+use Illuminate\Support\Collection;
 
-class Header extends Component
+class ProductBox extends Component
 {
-
     /**
      * Create a new component instance.
      */
-    public function __construct(public string $search = '', public bool $long = false)
+    public function __construct(public string $categorie, public Collection $products)
     {
-        //
+
     }
 
     /**
@@ -22,6 +22,6 @@ class Header extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.header');
+        return view('components.product-box');
     }
 }
