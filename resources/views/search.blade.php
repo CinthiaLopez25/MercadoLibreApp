@@ -1,3 +1,8 @@
+<?php
+  if(!isset($categorySelected))
+    $categorySelected = '';
+?>
+
 <x-template>
   <x-header :search="$search" long="true"/>
   <main class="grid grid-cols-4 gap-8 py-4 px-16" style="grid-template-areas: 'side main main main';">
