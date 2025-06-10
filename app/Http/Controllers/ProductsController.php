@@ -48,6 +48,7 @@ class ProductsController extends Controller
           'products' => $products,
           'categories' => $categories,
           'search' => $name,
+          'categorySelected' => ''
       ]);
     }
 
@@ -65,6 +66,7 @@ class ProductsController extends Controller
           'products' => $products,
           'categories' => $categories,
           'search' => $name,
+          'categorySelected' => $category
       ]);
     }
 
