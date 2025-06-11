@@ -47,7 +47,7 @@ class ProductsController extends Controller
       return view('search', [
           'products' => $products,
           'categories' => $categories,
-          'search' => $name,
+          'search' => $name
       ]);
     }
 
@@ -65,6 +65,7 @@ class ProductsController extends Controller
           'products' => $products,
           'categories' => $categories,
           'search' => $name,
+          'categorySelected' => $category
       ]);
     }
 

@@ -1,3 +1,8 @@
+<?php
+  if(!isset($categorySelected))
+    $categorySelected = '';
+?>
+
 <x-template>
   <x-header :search="$search" long="true"/>
   <main class="grid grid-cols-4 gap-8 py-4 px-16" style="grid-template-areas: 'side main main main';">
@@ -8,10 +13,10 @@
           {{ $products->count() }} {{ Str::plural('producto', $products->count()) }}
         </span>
       </span>
-      <div class="flex flex-col gap-1">
+      <div class="flex flex-col gap-1 w-min">
         <h3 class="text-lg">Categorias</h3>
         @foreach ($categories as $category)
-
+          <a class="w-full p-1 rounded-md hover:text-blue-700 hover:scale-105 {{ $category->id == $categorySelected ? 'bg-box' : '' }}" href="{{ route('productsByNameCategoy.show', [$search, $category->id]) }}">{{ $category->name }}</a>
         @endforeach
       </div>
     </sidebar>
