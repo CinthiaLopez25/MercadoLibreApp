@@ -60,12 +60,12 @@
           <a href="#">Mis compras</a>
           <a href="#">Favoritos</a>
           <img src="{{ Vite::image('notification.png') }}"/>
-          <img src="{{ Vite::image('shopping-cart.png') }}"/>
+          <x-cart-icon/>
         @else
           <a href="{{ route('register') }}">Crear tu cuenta</a>
           <a href="{{ route('login') }}">Ingresa</a>
           <a href="#">Mis compras</a>
-          <img class="w-6 h-5" src="{{ Vite::image('shopping-cart.png') }}"/>
+          <x-cart-icon/>
         @endif
       </div>
     </div>
