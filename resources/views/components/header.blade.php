@@ -1,3 +1,23 @@
+@php
+  use App\View\Components\CartIcon;
+
+  $cartIcon = new CartIcon;
+  $renderCart = Blade::renderComponent($cartIcon);
+  $authIcons =
+    (auth()->check() ?
+      "<a href=\"#\">Mi cuenta</a>
+      <a href=\"#\">Mis compras</a>
+      <a href=\"#\">Favoritos</a>
+      <img src=\"".Vite::image('notification.png')."\"/>
+      <x-cart-icon></x-cart-icon>"
+    :
+      "<a href=\"". route('register') ."\">Crear tu cuenta</a>
+      <a href=\"". route('login') ."\">Ingresa</a>
+      <a href=\"#\">Mis compras</a>
+      "
+    ). $renderCart;
+@endphp
+
 <header class="w-full text-sm p-3 bg-yellow-300 not-has-[nav]:hidden">
     <div class=" ml-40 flex items-center gap-4">
         <!-- Imagen al lado del buscador -->
@@ -55,18 +75,7 @@
 
       </nav>
       <div class="flex items-center gap-4 text-nowrap">
-        @if(auth()->check())
-          <a href="#">Mi cuenta</a>
-          <a href="#">Mis compras</a>
-          <a href="#">Favoritos</a>
-          <img src="{{ Vite::image('notification.png') }}"/>
-          <x-cart-icon/>
-        @else
-          <a href="{{ route('register') }}">Crear tu cuenta</a>
-          <a href="{{ route('login') }}">Ingresa</a>
-          <a href="#">Mis compras</a>
-          <x-cart-icon/>
-        @endif
+        {!! $authIcons !!}
       </div>
     </div>
     <!-- Modal para ingresar código postal -->
