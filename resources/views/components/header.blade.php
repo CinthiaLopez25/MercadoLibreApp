@@ -1,7 +1,7 @@
 @php
   use App\View\Components\CartIcon;
 
-  $cartIcon = new CartIcon;
+  $cartIcon = new CartIcon(10);
   $renderCart = Blade::renderComponent($cartIcon);
 
   $authIcons =
