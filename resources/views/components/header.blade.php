@@ -3,6 +3,7 @@
 
   $cartIcon = new CartIcon;
   $renderCart = Blade::renderComponent($cartIcon);
+
   $authIcons =
     (auth()->check() ?
       "<a href=\"#\">Mi cuenta</a>
@@ -16,6 +17,7 @@
       <a href=\"#\">Mis compras</a>
       "
     ). $renderCart;
+
 @endphp
 
 <header class="w-full text-sm p-3 bg-yellow-300 not-has-[nav]:hidden">
