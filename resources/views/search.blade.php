@@ -1,7 +1,7 @@
-<?php
+@php
   if(!isset($categorySelected))
     $categorySelected = '';
-?>
+@endphp
 
 <x-template>
   <x-header :search="$search" long="true"/>

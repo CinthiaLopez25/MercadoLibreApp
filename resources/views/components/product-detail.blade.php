@@ -1,8 +1,8 @@
-<?php
+@php
   $stock = $product->stock > 10 ?
             $product->stock - ($product->stock % 10):
             $product->stock - 1;
-?>
+@endphp
 
 <section class="product-detail gap-5 w-5/6 p-8 rounded-md bg-box">
   <div class="col-span-2">
