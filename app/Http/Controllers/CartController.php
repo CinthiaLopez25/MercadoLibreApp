@@ -12,7 +12,7 @@ class CartController extends Controller
       $productId = $request->input('product');
       $amount = $request->input('amount');
 
-      $cart = $user->cart()->get()->first();
+      $cart = $user->cart()->first();
       $item_product = $cart->product()->first()->pivot;
       if($item_product) {
         $amount += $item_product->item_amount;
