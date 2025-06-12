@@ -22,7 +22,7 @@
     @if ($product->free_shipping)
       <p class="text-green-500">Llega gratis mañana</p>
     @endif
-    @if ($product->stock > 0)
+    @if ($stock > 0)
       <p class="text-green-500">Stock disponible</p>
       <p class="flex flex-wrap"><span class="text-nowrap text-sm font-medium text-transparent-black-100">Almacenado y enviado por </span><span class="flex w-fit align-middle gap-1 text-green-500"><img class="w-5" src="{{ Vite::image('green-lightning.png') }}"/>Full</span></p>
     @endif
@@ -33,7 +33,7 @@
       <input hidden type="number" value="{{ $product->id }}" name="product"/>
       <span>Cantidad:
         <select id="countries" class="p-2.5 border-0 text-sm font-bold text-gray-900" name="amount">
-          @if($product->stock < 6)
+          @if($stock < 6)
             @for ($i = 0; $i < $stock; $i++)
               @php
                 $selected = false;
