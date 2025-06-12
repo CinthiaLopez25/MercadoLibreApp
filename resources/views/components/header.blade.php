@@ -1,22 +1,30 @@
 @php
   use App\View\Components\CartIcon;
 
-  $cartIcon = new CartIcon(10);
-  $renderCart = Blade::renderComponent($cartIcon);
+  $cartIcon = null;
+  $authIcons = '';
+  $amountItems = 0;
 
-  $authIcons =
-    (auth()->check() ?
+  if(auth()->check()){
+    $amountItems = session()->get('amountItems');
+
+    $authIcons =
       "<a href=\"#\">Mi cuenta</a>
       <a href=\"#\">Mis compras</a>
       <a href=\"#\">Favoritos</a>
-      <img src=\"".Vite::image('notification.png')."\"/>
-      <x-cart-icon></x-cart-icon>"
-    :
+      <img src=\"".Vite::image('notification.png')."\"/>";
+  }else {
+    $authIcons =
       "<a href=\"". route('register') ."\">Crear tu cuenta</a>
       <a href=\"". route('login') ."\">Ingresa</a>
       <a href=\"#\">Mis compras</a>
-      "
-    ). $renderCart;
+      ";
+  }
+
+  $cartIcon = new CartIcon($amountItems);
+  $renderCart = Blade::renderComponent($cartIcon);
+
+  $authIcons .= $renderCart;
 
 @endphp
 
