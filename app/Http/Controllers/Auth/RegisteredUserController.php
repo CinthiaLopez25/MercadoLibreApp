@@ -43,6 +43,8 @@ class RegisteredUserController extends Controller
 
         event(new Registered($user));
 
+        $cart = $user->cart()->create();
+
         Auth::login($user);
 
         return redirect(route('home', absolute: false));
