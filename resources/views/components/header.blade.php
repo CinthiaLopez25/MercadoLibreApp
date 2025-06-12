@@ -6,7 +6,7 @@
   $amountItems = 0;
 
   if(auth()->check()){
-    $amountItems = session()->get('amountItems');
+    $amountItems = session()->get('amountItems') | 0;
 
     $authIcons =
       "<a href=\"#\">Mi cuenta</a>
