@@ -24,10 +24,6 @@ class CartController extends Controller
         $cart->product()->attach($productId, ['item_amount' => $amount]);
       }
 
-      $items_amount = $this->getProductsAmount($user);
-
-      session()->put('item_amount', $items_amount);
-
       return redirect()->intended(route('products.show',['product'=> $productId]));
     }
 
