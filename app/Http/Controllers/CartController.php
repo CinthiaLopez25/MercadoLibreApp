@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class CartController extends Controller
@@ -13,7 +14,7 @@ class CartController extends Controller
       $amount = $request->input('amount');
 
       $cart = $user->cart()->first();
-      $item_product = $cart->product()->first()->pivot;
+      $item_product = $cart->product()->where('products.id','=',$productId)->first()->pivot ?? null;
       if($item_product) {
         $amount += $item_product->item_amount;
         $cart->product()->updateExistingPivot($productId,[
@@ -23,8 +24,15 @@ class CartController extends Controller
         $cart->product()->attach($productId, ['item_amount' => $amount]);
       }
 
-      session()->put('item_amount', $amount);
+      $items_amount = $this->getProductsAmount($user);
+
+      session()->put('item_amount', $items_amount);
 
       return redirect()->intended(route('products.show',['product'=> $productId]));
+    }
+
+    public static function getProductsAmount(User $user){
+      $cart = $user->cart()->first();
+      return $cart->product()->sum('item_amount');
     }
 }
