@@ -1,4 +1,4 @@
-<?php
+@php
   if($long){
     $class_a = "flex flex-col gap-3 min-w-36 aspect-card w-60";
     $class_p = "text-sm font-medium text-card mb-1";
@@ -6,7 +6,7 @@
     $class_a = "flex flex-col gap-3 min-w-36 aspect-card w-40 group";
     $class_p = "text-sm font-medium text-card mb-1 group-hover:text-blue-500";
   }
-?>
+@endphp
 
 <a class="{{ $class_a }}" href="/product/{{ $product->id }}">
   <img src={{ $product->image_url  }} class="aspect-card-image">

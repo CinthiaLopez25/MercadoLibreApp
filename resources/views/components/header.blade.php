@@ -1,3 +1,33 @@
+@php
+  use App\View\Components\CartIcon;
+
+  $cartIcon = null;
+  $authIcons = '';
+  $amountItems = 0;
+
+  if(auth()->check()){
+    $amountItems = session()->get('item_amount') | 0;
+
+    $authIcons =
+      "<a href=\"#\">Mi cuenta</a>
+      <a href=\"#\">Mis compras</a>
+      <a href=\"#\">Favoritos</a>
+      <img src=\"".Vite::image('notification.png')."\"/>";
+  }else {
+    $authIcons =
+      "<a href=\"". route('register') ."\">Crear tu cuenta</a>
+      <a href=\"". route('login') ."\">Ingresa</a>
+      <a href=\"#\">Mis compras</a>
+      ";
+  }
+
+  $cartIcon = new CartIcon($amountItems);
+  $renderCart = Blade::renderComponent($cartIcon);
+
+  $authIcons .= $renderCart;
+
+@endphp
+
 <header class="w-full text-sm p-3 bg-yellow-300 not-has-[nav]:hidden">
     <div class=" ml-40 flex items-center gap-4">
         <!-- Imagen al lado del buscador -->
@@ -55,18 +85,7 @@
 
       </nav>
       <div class="flex items-center gap-4 text-nowrap">
-        @if(auth()->check())
-          <a href="#">Mi cuenta</a>
-          <a href="#">Mis compras</a>
-          <a href="#">Favoritos</a>
-          <img src="{{ Vite::image('notification.png') }}"/>
-          <img src="{{ Vite::image('shopping-cart.png') }}"/>
-        @else
-          <a href="{{ route('register') }}">Crear tu cuenta</a>
-          <a href="{{ route('login') }}">Ingresa</a>
-          <a href="#">Mis compras</a>
-          <img class="w-6 h-5" src="{{ Vite::image('shopping-cart.png') }}"/>
-        @endif
+        {!! $authIcons !!}
       </div>
     </div>
     <!-- Modal para ingresar código postal -->

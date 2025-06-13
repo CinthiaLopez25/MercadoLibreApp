@@ -24,8 +24,11 @@ class Product extends Model
         'deleted_at'
     ];
 
-    public function category()
-    {
-        return $this->belongsTo(Category::class, 'id_category');
+    public function category() {
+      return $this->belongsTo(Category::class);
+    }
+
+    public function product() {
+      return $this->belongsToMany(Cart::class,'items_cart','id_product', 'id_cart')->withPivot('item_amount');
     }
 }
