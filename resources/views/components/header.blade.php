@@ -1,12 +1,14 @@
 @php
   use App\View\Components\CartIcon;
+  use App\Http\Controllers\CartController;
 
   $cartIcon = null;
   $authIcons = '';
   $amountItems = 0;
 
   if(auth()->check()){
-    $amountItems = session()->get('item_amount') | 0;
+    $user = auth()->user();
+    $amountItems = CartController::getProductsAmount($user);
 
     $authIcons =
       "<a href=\"#\">Mi cuenta</a>

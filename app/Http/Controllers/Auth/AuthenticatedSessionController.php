@@ -28,11 +28,6 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        $user = $request->user();
-        $cart = $user->cart()->first();
-        $amount = $cart->product()->sum('item_amount');
-        session()->put('item_amount', $amount);
-
         return redirect()->intended(route('home', absolute: false));
     }
 
