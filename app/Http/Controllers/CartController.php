@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
-    public function addProduct(Request $request){
+    public function store(Request $request){
       $user = $request->user();
       $productId = $request->input('product');
       $amount = $request->input('amount');

@@ -28,7 +28,7 @@
     @endif
 
 
-    <form class="flex flex-col gap-2" action="{{ route('cart.addProduct') }}" method="post">
+    <form class="flex flex-col gap-2" action="{{ route('cart.store') }}" method="post">
       @csrf
       <input hidden type="number" value="{{ $product->id }}" name="product"/>
       <span>Cantidad:

@@ -21,7 +21,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware('auth')->group(function() {
-  Route::post('/product',[CartController::class, 'addProduct'])->name('cart.addProduct');
+  Route::post('/product',[CartController::class, 'store'])->name('cart.store');
   Route::post('/purchase',[CartController::class, 'store'])->name('purchase.store');
 });
 
