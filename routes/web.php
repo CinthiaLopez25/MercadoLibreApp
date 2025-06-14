@@ -22,6 +22,7 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware('auth')->group(function() {
   Route::post('/product',[CartController::class, 'addProduct'])->name('cart.addProduct');
+  Route::post('/purchase',[CartController::class, 'store'])->name('purchase.store');
 });
 
 require __DIR__.'/auth.php';
