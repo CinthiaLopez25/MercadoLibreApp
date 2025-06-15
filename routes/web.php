@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -77,6 +78,10 @@ Route::get('/ofertas', function () {
 })->name('cupones'); // ← Agrega este nombre
 
 
+});
+
+Route::middleware('auth')->group(function() {
+  Route::post('/product',[CartController::class, 'addProduct'])->name('cart.addProduct');
 });
 
 require __DIR__.'/auth.php';
