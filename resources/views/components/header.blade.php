@@ -45,10 +45,11 @@
             <a href="#" class="block px-10 py-2 hover:hover:bg-blue-600 transition-colors duration-200">Tecnologia</a>
           </div>
         </div>
-        <a href="#" class="cursor-pointer">Ofertas</a>
-        <a href="#" class="cursor-pointer">Cupones</a>
-        <a href="#" class="cursor-pointer">Supermercado</a>
-        <a href="#" class="cursor-pointer">Moda</a>
+
+        <a href="{{ route('ofertas') }}">Ofertas</a>
+        <a href="{{ route('cupones') }}">Cupones</a>
+        <a href="{{ route('supermercado') }}">Supermercado</a>
+        <a href="{{ route('moda') }}">Moda</a>
         <a href="#" class="cursor-pointer">Mercado Play</a>
         <a href="#" class="cursor-pointer">Vender</a>
         <a href="#" class="cursor-pointer">Ayuda</a>
