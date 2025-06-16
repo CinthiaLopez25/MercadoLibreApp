@@ -77,6 +77,21 @@ Route::get('/ofertas', function () {
     return view('cupones', compact('productos'));
 })->name('cupones'); // ← Agrega este nombre
 
+     Route::get('/play', function () {
+    $productos = [
+
+    ];
+
+    return view('play', compact('productos'));
+})->name('play'); // ← Agrega este nombre
+
+      Route::get('/ayuda', function () {
+    $productos = [
+
+    ];
+
+    return view('ayuda', compact('productos'));
+})->name('ayuda'); // ← Agrega este nombre
 
 });
 
