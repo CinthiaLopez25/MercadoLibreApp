@@ -6,14 +6,14 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class Search extends Component
+class CartIcon extends Component
 {
     /**
      * Create a new component instance.
      */
-    public function __construct(public array $products, public array $categories)
+    public function __construct(public int $items = 0)
     {
-
+        //
     }
 
     /**
@@ -21,6 +21,6 @@ class Search extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.product-box');
+        return view('components.cart-icon');
     }
 }

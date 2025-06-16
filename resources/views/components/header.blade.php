@@ -1,3 +1,35 @@
+@php
+  use App\View\Components\CartIcon;
+  use App\Http\Controllers\CartController;
+
+  $cartIcon = null;
+  $authIcons = '';
+  $amountItems = 0;
+
+  if(auth()->check()){
+    $user = auth()->user();
+    $amountItems = CartController::getProductsAmount($user);
+
+    $authIcons =
+      "<a href=\"#\">Mi cuenta</a>
+      <a href=\"#\">Mis compras</a>
+      <a href=\"#\">Favoritos</a>
+      <img src=\"".Vite::image('notification.png')."\"/>";
+  }else {
+    $authIcons =
+      "<a href=\"". route('register') ."\">Crear tu cuenta</a>
+      <a href=\"". route('login') ."\">Ingresa</a>
+      <a href=\"#\">Mis compras</a>
+      ";
+  }
+
+  $cartIcon = new CartIcon($amountItems);
+  $renderCart = Blade::renderComponent($cartIcon);
+
+  $authIcons .= $renderCart;
+
+@endphp
+
 <header class="w-full text-sm p-3 bg-yellow-300 not-has-[nav]:hidden">
     <div class=" ml-40 flex items-center gap-4">
         <!-- Imagen al lado del buscador -->
@@ -45,28 +77,18 @@
             <a href="#" class="block px-10 py-2 hover:hover:bg-blue-600 transition-colors duration-200">Tecnologia</a>
           </div>
         </div>
-        <a href="#" class="cursor-pointer">Ofertas</a>
-        <a href="#" class="cursor-pointer">Cupones</a>
-        <a href="#" class="cursor-pointer">Supermercado</a>
-        <a href="#" class="cursor-pointer">Moda</a>
-        <a href="#" class="cursor-pointer">Mercado Play</a>
+
+        <a href="{{ route('ofertas') }}">Ofertas</a>
+        <a href="{{ route('cupones') }}">Cupones</a>
+        <a href="{{ route('supermercado') }}">Supermercado</a>
+        <a href="{{ route('moda') }}">Moda</a>
+        <a href="{{ route('play') }}">Mercado play</a>
         <a href="#" class="cursor-pointer">Vender</a>
-        <a href="#" class="cursor-pointer">Ayuda</a>
+        <a href="{{ route('ayuda') }}">Ayuda</a>
 
       </nav>
       <div class="flex items-center gap-4 text-nowrap">
-        @if(auth()->check())
-          <a href="#">Mi cuenta</a>
-          <a href="#">Mis compras</a>
-          <a href="#">Favoritos</a>
-          <img src="{{ Vite::image('notification.png') }}"/>
-          <img src="{{ Vite::image('shopping-cart.png') }}"/>
-        @else
-          <a href="{{ route('register') }}">Crear tu cuenta</a>
-          <a href="{{ route('login') }}">Ingresa</a>
-          <a href="#">Mis compras</a>
-          <img class="w-6 h-5" src="{{ Vite::image('shopping-cart.png') }}"/>
-        @endif
+        {!! $authIcons !!}
       </div>
     </div>
     <!-- Modal para ingresar código postal -->
