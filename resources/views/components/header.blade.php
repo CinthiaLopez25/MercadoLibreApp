@@ -82,9 +82,9 @@
         <a href="{{ route('cupones') }}">Cupones</a>
         <a href="{{ route('supermercado') }}">Supermercado</a>
         <a href="{{ route('moda') }}">Moda</a>
-        <a href="#" class="cursor-pointer">Mercado Play</a>
+        <a href="{{ route('play') }}">Mercado play</a>
         <a href="#" class="cursor-pointer">Vender</a>
-        <a href="#" class="cursor-pointer">Ayuda</a>
+        <a href="{{ route('ayuda') }}">Ayuda</a>
 
       </nav>
       <div class="flex items-center gap-4 text-nowrap">
