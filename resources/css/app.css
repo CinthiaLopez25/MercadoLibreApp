@@ -56,6 +56,39 @@
   }
 
   .product-button {
-    @apply w-full px-2 py-4 rounded-md font-bold;
+    @apply w-full px-2 py-4 rounded-md font-bold hover:cursor-pointer;
+  }
+
+  .cart-product {
+    grid-template-areas:
+    "image info info"
+    "image info info"
+    "n info info";
+
+    :nth-child(1) {
+      grid-area: image;
+    }
+    :nth-child(2) {
+      grid-area: info;
+    }
+    @apply grid grid-cols-3 grid-rows-3;
+  }
+
+  .info-product {
+    grid-template-areas:
+    "product product"
+    "product product"
+    "price price";
+    :nth-child(4) {
+      grid-area: product;
+    }
+    :nth-child(5) {
+      grid-area: price;
+    }
+    @apply grid grid-cols-2 grid-rows-3;
+  }
+
+  .cart-button {
+    @apply text-xs font-bold text-blue-700 hover:cursor-pointer;
   }
 }
