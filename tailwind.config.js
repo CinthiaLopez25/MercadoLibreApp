@@ -26,6 +26,7 @@ export default {
             backgroundColor: {
               "primary": '#ededed',
               "box": 'rgb(255, 255, 255)',
+              "modal":'rgba(0, 0, 0, 0.6)',
             }
         },
         clipPath: {
