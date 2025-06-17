@@ -3,6 +3,8 @@
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PurchaseController;
+use App\Models\Purchase;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [ProductsController::class, 'show'])->name('home');
@@ -96,7 +98,11 @@ Route::get('/ofertas', function () {
 });
 
 Route::middleware('auth')->group(function() {
-  Route::post('/product',[CartController::class, 'addProduct'])->name('cart.addProduct');
+  Route::get('/cart',[CartController::class, 'show'])->name('cart.show');
+  Route::post('/product',[CartController::class, 'store'])->name('cart.store');
+  Route::post('/product/delete',[CartController::class, 'delete'])->name('cart.delete');
+  Route::get('/purchase',[PurchaseController::class, 'show'])->name('purchase.show');
+  Route::post('/purchase',[PurchaseController::class, 'store'])->name('purchase.store');
 });
 
 require __DIR__.'/auth.php';
