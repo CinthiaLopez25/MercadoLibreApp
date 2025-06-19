@@ -7,7 +7,7 @@ use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Support\Str;
 
-class RealDataSeeder extends Seeder
+class DataSeeder extends Seeder
 {
     public function run(): void
     {
