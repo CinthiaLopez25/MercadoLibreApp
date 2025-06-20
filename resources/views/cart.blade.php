@@ -10,6 +10,13 @@
         </div>
         <button id="purchaseBtn" class="product-button w-fit py-2 bg-blue-700 text-slate-200" type="submit">Realizar compra</button>
       </form>
+      @if(isset($total) && $total > 0)
+      <div class="w-full text-right pr-4">
+        <h3 class="text-lg font-bold text-gray-900">
+          Total: ${{ number_format($total, 2) }}
+        </h3>
+      </div>
+      @endif
     </div>
   </main>
 </x-template>
