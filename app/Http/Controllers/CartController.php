@@ -34,7 +34,15 @@ class CartController extends Controller
       $cart = $user->cart()->first();
       $products = $cart->product()->get() ?? null;
 
-      return view('cart', ['products' => $products]);
+      $total = 0;
+      foreach ($products as $product) {
+          $total += $product->price * $product->pivot->item_amount;
+      }
+
+      return view('cart', [
+          'products' => $products,
+          'total' => $total
+      ]);
     }
 
     public function delete(Request $request) {
