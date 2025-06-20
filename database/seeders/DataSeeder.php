@@ -40,7 +40,7 @@ class DataSeeder extends Seeder
             ['Licuadora Oster 10 velocidades', 'Vaso de vidrio resistente.', 1499.00, 'Hogar', true, 'https://ss625.liverpool.com.mx/xl/1099339060.jpg'],
             ['Balón de fútbol profesional', 'Con cámara de butilo y costuras reforzadas.', 799.99, 'Deportes', false, 'https://voit.vtexassets.com/arquivos/ids/166174/84435_01.jpg?v=638712747490270000'],
             ['Zapatos Adidas Running', 'Calzado con amortiguación Boost.', 1599.00, 'Moda', true, 'https://assets.adidas.com/images/w_600,f_auto,q_auto/86c988db99e2450bb7cec16dea8aa1c7_9366/Tenis_de_Running_Switch_Move_Negro_ID5253_01_standard.jpg'],
-            ['Peluche gigante oso panda', 'De 1.2 metros, muy suave.', 1299.00, 'Juguetes', false, 'https://ae01.alicdn.com/kf/Hd72354a3a28c428e9e44bbabbb3ad03ei/New-Large-Size-Teddy-Bear-Plush-Toy-Lovely-Giant-Panda-Huge-Stuffed-Soft-Dolls-Birthday-Gift.jpg'],
+            ['Peluche gigante oso panda', 'De 1.2 metros, muy suave.', 1299.00, 'Juguetes', false, 'https://th.bing.com/th/id/OIP.kKb0u9gdA_Nssgw-hGLTEwHaIM?r=0&cb=thvnextc1&w=542&h=600&rs=1&pid=ImgDetMain'],
             ['Perfume Chanel No. 5', 'Fragancia clásica floral-amaderada.', 2499.00, 'Belleza', true, 'https://abscents.com.mx/cdn/shop/files/41tEJylR89L-fotor-20240521125022.jpg?v=1716317429'],
             ['Impresora HP Multifuncional', 'Con escáner y WiFi.', 2699.00, 'Oficina', true, 'https://ofixmx.vtexassets.com/arquivos/ids/201571-800-450?v=638417618143400000&width=800&height=450&aspect=true'],
             ['Escritorio madera nogal', 'Amplio y elegante.', 4299.00, 'Oficina', false, 'https://m.media-amazon.com/images/I/61iohqERpfL.jpg'],
