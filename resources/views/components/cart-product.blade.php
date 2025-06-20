@@ -12,6 +12,11 @@
     <input hidden type="text" name="product[]" value="{{ $product->id }}">
     <section class="flex flex-col justify-around">
       <h2 class="w-full">{{ $product->name }}</h2>
+      {{--Mostrar el precio del producto --}}
+    <p class="text-sm text-black font-semibold">
+      Precio: ${{ number_format($product->price, 2) }}
+    </p>
+
       <div class="flex gap-6">
         <button type="submit" class="cart-button">Eliminar</button>
         <button name="purchaseBtn" type="submit" class="cart-button">Comprar</button>
